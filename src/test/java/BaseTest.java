@@ -1,4 +1,3 @@
-import java.io.File;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,13 +7,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class BaseTest {
-    File rutaAChromeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\chromedriver.exe");
-    File rutaAFirefoxDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\geckodriver.exe");
-    File rutaAEdgeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\msedgedriver.exe");
+import java.io.File;
 
-    public WebDriver getWebDeriver(Navegadores navegador){
-        WebDriver myWebDriver = null;
+public class BaseTest {
+    File rutaAChromeDriver = new File("C:\\WebDrivers\\chromedriver.exe");
+    File rutaAFirefoxDriver = new File("C:\\WebDrivers\\geckodriver.exe");
+    File rutaAEdgeDriver = new File("C:\\WebDrivers\\msedgedriver.exe");
+
+    public WebDriver myWebDriver = getWebDriver(Navegadores.CHROME);
+    private WebDriver getWebDriver(Navegadores navegador){
+
         //Aplica para todos los WebDrivers
         DesiredCapabilities capacidadesDeseadas = new DesiredCapabilities();
 
@@ -63,7 +65,7 @@ public class BaseTest {
     }
 
 void testInstanciaWebDriver () {
-        WebDriver nuevaInstancia = getWebDeriver(Navegadores.CHROME);
+        WebDriver nuevaInstancia = getWebDriver(Navegadores.CHROME);
 }
 
 }
