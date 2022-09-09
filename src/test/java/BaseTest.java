@@ -9,10 +9,10 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BaseTest {
-    File rutaAChromeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\chromedriver.exe");
-    File rutaAFirefoxDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\geckodriver.exe");
-    File rutaAEdgeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\msedgedriver.exe");
-
+    File rutaAChromeDriver = new File("C:\\Drive\\chromedriver_OK.exe");
+    File rutaAFirefoxDriver = new File("C:\\Drive\\geckodriver.exe");
+    File rutaAEdgeDriver = new File("C:\\Drive\\msedgedriver.exe");
+    public WebDriver myWebDriver = getWebDeriver(Navegadores.CHROME);
     public WebDriver getWebDeriver(Navegadores navegador){
         WebDriver myWebDriver = null;
         //Aplica para todos los WebDrivers
@@ -62,8 +62,8 @@ public class BaseTest {
         return myWebDriver;
     }
 
-void testInstanciaWebDriver () {
+    void testInstanciaWebDriver () {
         WebDriver nuevaInstancia = getWebDeriver(Navegadores.CHROME);
-}
+    }
 
 }

@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="QAML_PrimerSelenium" options="--add-modules java.base" />
+      <module name="QAML_PrimerSelenium" options="" />
     </option>
   </component>
 </project>
