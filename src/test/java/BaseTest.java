@@ -13,8 +13,9 @@ public class BaseTest {
     File rutaAFirefoxDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\geckodriver.exe");
     File rutaAEdgeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\msedgedriver.exe");
 
+    public WebDriver myWebDriver = getWebDeriver(Navegadores.CHROME);
+
     public WebDriver getWebDeriver(Navegadores navegador){
-        WebDriver myWebDriver = null;
         //Aplica para todos los WebDrivers
         DesiredCapabilities capacidadesDeseadas = new DesiredCapabilities();
 

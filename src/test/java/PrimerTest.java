@@ -1,10 +1,11 @@
-import org.openqa.selenium.WebDriver;
+import Steps.PrimerSteps;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class PrimerTest extends BaseTest {
+    PrimerSteps primerSteps = new PrimerSteps(myWebDriver);
 
     @BeforeTest
     public void antesDeLaPrueba() {
