@@ -1,4 +1,4 @@
-import Steps.PrimerStep;
+import Steps.PrimerSteps;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class PrimerTest extends BaseTest {
 
-    PrimerStep primerStep =new PrimerStep(myWebDriver);
+    PrimerSteps primerStep =new PrimerSteps(myWebDriver);
 
     @BeforeTest
     public void antesDeLaPrueba() {

@@ -2,8 +2,8 @@ package Steps;
 
 import org.openqa.selenium.WebDriver;
 
-public class PrimerStep extends BaseSteps{
-    public PrimerStep(WebDriver myWebDriver) {
+public class PrimerSteps extends BaseSteps{
+    public PrimerSteps(WebDriver myWebDriver) {
         super(myWebDriver);
     }
     public void abrirURL(String URL) {
