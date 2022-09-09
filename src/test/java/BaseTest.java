@@ -1,4 +1,5 @@
 import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,16 +10,16 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BaseTest {
-    File rutaAChromeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\chromedriver.exe");
-    File rutaAFirefoxDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\geckodriver.exe");
-    File rutaAEdgeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\msedgedriver.exe");
+    File rutaAChromeDriver = new File("C:\\Users\\Ryzen\\Documents\\chromedriver.exe");
+    File rutaAFirefoxDriver = new File("C:\\Users\\Ryzen\\Documents\\geckodriver.exe");
+    File rutaAEdgeDriver = new File("C:\\Users\\Ryzen\\Documents\\msedgedriver.exe");
+    public WebDriver myWebDriver = getWebDriver(Navegadores.CHROME);
 
-    public WebDriver getWebDeriver(Navegadores navegador){
-        WebDriver myWebDriver = null;
+    private WebDriver getWebDriver(Navegadores navegador) {
         //Aplica para todos los WebDrivers
         DesiredCapabilities capacidadesDeseadas = new DesiredCapabilities();
 
-        switch (navegador){
+        switch (navegador) {
             case CHROME: {
                 System.setProperty("webdriver.chrome.driver", String.valueOf(rutaAChromeDriver));
                 //Aplica para Chrome WebDriver
@@ -27,7 +28,8 @@ public class BaseTest {
                 opcionesDeChrome.merge(capacidadesDeseadas);
 
                 myWebDriver = new ChromeDriver(opcionesDeChrome);
-                break;}
+                break;
+            }
             case FIREFOX: {
                 System.setProperty("webdriver.gecko.driver", String.valueOf(rutaAFirefoxDriver));
                 FirefoxOptions opcionesFirefox = new FirefoxOptions();
@@ -39,7 +41,7 @@ public class BaseTest {
                 myWebDriver = new FirefoxDriver(opcionesFirefox);
                 break;
             }
-            case EDGE:{
+            case EDGE: {
                 System.setProperty("webdriver.edge.driver", String.valueOf(rutaAEdgeDriver));
                 EdgeOptions opcionesEdge = new EdgeOptions();
                 opcionesEdge.merge(capacidadesDeseadas);
@@ -47,7 +49,7 @@ public class BaseTest {
                 myWebDriver = new EdgeDriver(opcionesEdge);
                 break;
             }
-            default:{
+            default: {
                 System.setProperty("webdriver.chrome.driver", String.valueOf(rutaAChromeDriver));
                 //Aplica para Chrome WebDriver
                 ChromeOptions opcionesDeChrome = new ChromeOptions();
@@ -62,8 +64,8 @@ public class BaseTest {
         return myWebDriver;
     }
 
-void testInstanciaWebDriver () {
-        WebDriver nuevaInstancia = getWebDeriver(Navegadores.CHROME);
-}
+    void testInstanciaWebDriver() {
+        WebDriver nuevaInstancia = getWebDriver(Navegadores.CHROME);
+    }
 
 }
