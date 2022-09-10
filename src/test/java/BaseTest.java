@@ -1,4 +1,6 @@
-import java.io.File;
+import java.io.*;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,13 +11,19 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BaseTest {
-    File rutaAChromeDriver = new File("/Users/jxr20920/Downloads/chromedriver");
-    File rutaAFirefoxDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\geckodriver.exe");
-    File rutaAEdgeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\msedgedriver.exe");
+
+    String propertiesFileNameLocalConfig = "qaml_primerselenium_local.properties";
 
     public WebDriver myWebDriver = getWebDeriver(Navegadores.CHROME);
 
-    public WebDriver getWebDeriver(Navegadores navegador){
+    public WebDriver getWebDeriver(Navegadores navegador) {
+
+        String chromeDriver = getProperty(propertiesFileNameLocalConfig, "CHROME_DRIVER_PATH");
+
+        File rutaAChromeDriver = new File(chromeDriver);
+        File rutaAFirefoxDriver = new File(getProperty(propertiesFileNameLocalConfig,"FIREFOX_DRIVER_PATH"));
+        File rutaAEdgeDriver = new File(propertiesFileNameLocalConfig,"EDGE_DRIVER_PATH");
+
         //Aplica para todos los WebDrivers
         DesiredCapabilities capacidadesDeseadas = new DesiredCapabilities();
 
@@ -63,8 +71,27 @@ public class BaseTest {
         return myWebDriver;
     }
 
-void testInstanciaWebDriver () {
+    void testInstanciaWebDriver () {
         WebDriver nuevaInstancia = getWebDeriver(Navegadores.CHROME);
 }
+
+    public String getProperty(String propertiesFile, String key) {
+        Properties properties = new Properties();
+        InputStream inputStream = null;
+        String propertyValue = null;
+
+        try{
+            inputStream = new FileInputStream(propertiesFile);
+            properties.load(inputStream);
+            propertyValue = properties.getProperty(key);
+            inputStream.close();
+        }  catch (Exception e) {
+            e.printStackTrace();
+            inputStream.close();
+        } finally {
+            return propertyValue;
+        }
+
+    }
 
 }
