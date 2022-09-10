@@ -13,4 +13,17 @@ public class EjerciciosEnClaseTest extends BaseTest {
         primerSteps.imprimirCodigoFuente();
         primerSteps.cerrarNavegador();
     }
+
+    @Test
+    public void seleniumEjercicio3(){
+        primerSteps.abrirURLEnBrowser();
+        primerSteps.obtenerURLActual();
+        primerSteps.navegarAFacebook();
+        primerSteps.navegarAESPN();
+        primerSteps.retrocederEnNavegador();
+        primerSteps.retrocederEnNavegador();
+        primerSteps.avanzarEnNavegador();
+        primerSteps.refrescarNavegador();
+        primerSteps.cerrarNavegador();
+    }
 }
