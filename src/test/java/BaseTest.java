@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BaseTest {
-    File rutaAChromeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\chromedriver.exe");
+    File rutaAChromeDriver = new File("/Users/jxr20920/Downloads/chromedriver");
     File rutaAFirefoxDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\geckodriver.exe");
     File rutaAEdgeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\msedgedriver.exe");
 
