@@ -18,10 +18,9 @@ public class EjerciciosEnclaseTests extends BaseTest{
     public void seleniumEjericio3(){
      primerSteps.abrirURLGoogle();
      primerSteps.obtenerURLPagina();
-     primerSteps.navegarAFacebook();
-     primerSteps.navegarAESPN();
-     primerSteps.retrocederPaginaEnNavegador();
-     primerSteps.retrocederPaginaEnNavegador();
+     primerSteps.navegarEnLaPagina("https://es-la.facebook.com/");
+     primerSteps.navegarEnLaPagina("https://www.espn.com.co/");
+     primerSteps.retrocederPaginaEnNavegador(2);
      primerSteps.avanzarPaginaNavegador();
      primerSteps.refrescarPagina();
      primerSteps.cerrarNavegador();

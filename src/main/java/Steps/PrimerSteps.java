@@ -12,32 +12,31 @@ public class PrimerSteps extends BaseSteps{
             myWebDriver.get("https:www.google.com");
         }
 
-        public void navegarAFacebook(){
-            myWebDriver.navigate().to("https://es-la.facebook.com/");
-            System.out.println(myWebDriver.getCurrentUrl());
-        }
-        public void navegarAESPN(){
-            myWebDriver.navigate().to("https://www.espn.com.co/");
-            System.out.println(myWebDriver.getCurrentUrl());
+
+        public void navegarEnLaPagina(String url){
+            myWebDriver.navigate().to(url);
+            obtenerURLPagina();
         }
 
-        public void retrocederPaginaEnNavegador(){
-            myWebDriver.navigate().back();
-            System.out.println(myWebDriver.getCurrentUrl());
-        }
+        public void retrocederPaginaEnNavegador(int n){
+            for (int i=1; i<=n; i++) {
+                    myWebDriver.navigate().back();
+                    obtenerURLPagina();
+                }
+            }
 
         public void avanzarPaginaNavegador(){
            myWebDriver.navigate().forward();
-            System.out.println(myWebDriver.getCurrentUrl());
+            obtenerURLPagina();
         }
 
         public void refrescarPagina(){
             myWebDriver.navigate().refresh();
-            System.out.println(myWebDriver.getCurrentUrl());
+            obtenerURLPagina();
         }
 
         public void obtenerURLPagina(){
-            System.out.println("la url abierta es "+myWebDriver.getCurrentUrl());
+            System.out.println("la url Actual es "+myWebDriver.getCurrentUrl());
         }
 
         public void obtenerTituloPaginaAbierta(){
@@ -46,8 +45,6 @@ public class PrimerSteps extends BaseSteps{
         public  void imprimirCodigoFuente(){
             System.out.println(myWebDriver.getPageSource());
         }
-        public void cerrarNavegador(){
-            myWebDriver.quit();
-        }
+
 
 }

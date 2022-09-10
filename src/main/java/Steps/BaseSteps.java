@@ -7,4 +7,12 @@ public class BaseSteps {
     public BaseSteps (WebDriver webDriver) {
         myWebDriver = webDriver;
     }
+
+    public void abrirURL(String url){
+        myWebDriver.get(url);
+    }
+
+    public void cerrarNavegador(){
+        myWebDriver.quit();
+    }
 }
