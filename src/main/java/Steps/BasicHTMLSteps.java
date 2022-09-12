@@ -14,10 +14,12 @@ public class BasicHTMLSteps extends BaseSteps{
         WebElement usuarioTxt = basicHTMLPage.escribirUsuario();
         usuarioTxt.sendKeys(usuario);
     }
+
     public void escribirContrasena(String contrasena) {
         WebElement contrasenaTxt = basicHTMLPage.escribirContrasena();
         contrasenaTxt.sendKeys(contrasena);
     }
+
     public void login() {
         WebElement loginBtn = basicHTMLPage.login();
         loginBtn.click();
