@@ -1,0 +1,20 @@
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <annotationProcessing>\r\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\r\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\r\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\r\n        <outputRelativeToContentRoot value=\"true\" />\r\n        <module name=\"QAML_PrimerSelenium\" />\r\n      </profile>\r\n    </annotationProcessing>\r\n  </component>\r\n  <component name=\"JavacSettings\">\r\n    <option name=\"ADDITIONAL_OPTIONS_OVERRIDE\">\r\n      <module name=\"QAML_PrimerSelenium\" options=\"--add-modules java.base\" />\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 2ff3e991b3bc16078e7e6a0bd5dfbf3623ebaa02)
++++ b/.idea/compiler.xml	(date 1662996979825)
+@@ -12,7 +12,7 @@
+   </component>
+   <component name="JavacSettings">
+     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+-      <module name="QAML_PrimerSelenium" options="--add-modules java.base" />
++      <module name="QAML_PrimerSelenium" options="" />
+     </option>
+   </component>
+ </project>
+\ No newline at end of file

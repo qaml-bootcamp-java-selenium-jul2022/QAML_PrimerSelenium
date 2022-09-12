@@ -5,8 +5,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class PrimerTest extends BaseTest {
-
-    PrimerSteps primerSteps =new PrimerSteps(myWebDriver);
+    PrimerSteps primerSteps = new PrimerSteps(myWebDriver);
 
     @BeforeTest
     public void antesDeLaPrueba() {
@@ -18,20 +17,20 @@ public class PrimerTest extends BaseTest {
     @Test
     public void obtenerURL() {
         String expectedURL = "https://www.google.com/";
-        Assert.assertEquals(primerSteps.obtenerURL(), expectedURL);
-        System.out.println("La URL abierta es: " + primerSteps.obtenerURL());
+        Assert.assertEquals(primerSteps.imprimirURLActual(), expectedURL);
+        System.out.println("La URL abierta es: " + primerSteps.imprimirURLActual());
     }
 
     @Test
     public void obtenerTituloPagina() {
         String expectedTitle = "Google";
-        Assert.assertEquals(primerSteps.obtenerTituloPagina(), expectedTitle);
-        System.out.println("El título de la página es: " + primerSteps.obtenerTituloPagina());
+        Assert.assertEquals(primerSteps.imprimirTituloPagina(), expectedTitle);
+        System.out.println("El título de la página es: " + primerSteps.imprimirTituloPagina());
     }
 
     @AfterTest
     public void despuesDeLaPrueba() {
         System.out.println("Método After (después) de la prueba");
-        primerSteps.cerrarURL();
+        primerSteps.quitarWebDriver();
     }
 }
