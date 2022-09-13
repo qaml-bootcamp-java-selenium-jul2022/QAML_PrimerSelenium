@@ -23,7 +23,6 @@ public class BaseTest {
         File rutaAChromeDriver = new File(getProperty(propertiesFileNameLocationConfig,"CHROME_DRIVER_PATH"));
         File rutaAFirefoxDriver = new File(getProperty(propertiesFileNameLocationConfig,"FIREFOX_DRIVER_PATH"));
         File rutaAEdgeDriver = new File(getProperty(propertiesFileNameLocationConfig,"EDGE_DRIVER_PATH"));
-
         DesiredCapabilities capacidadesDeseadas = new DesiredCapabilities();
 
         switch (navegador){
