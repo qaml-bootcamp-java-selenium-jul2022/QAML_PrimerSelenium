@@ -24,7 +24,7 @@ public class EjerciciosEnClaseTest extends BaseTest{
         primerSteps.imprimirURLActual();
         primerSteps.backPage(2);
         primerSteps.imprimirURLActual();
-        primerSteps.forwardPage(1);
+        primerSteps.forwardPage(2);
         primerSteps.imprimirURLActual();
         primerSteps.actualizarPagina();
         primerSteps.imprimirURLActual();
