@@ -7,10 +7,7 @@ public class PrimerStep extends BaseSteps{
     public PrimerStep(WebDriver webDriverDeTests) {
         super(webDriverDeTests);
     }
-    public void visitarPagina() {
-        System.out.println("Método Before (Antes) Test");
-        myWebDriver.get("https://www.google.com");
-    }
+
 
     public void obtenerURL() {
         String expectedURL = "https://www.google.com/";
@@ -28,4 +25,37 @@ public class PrimerStep extends BaseSteps{
         System.out.println("Método After (después) de la prueba");
         myWebDriver.quit();
     }
+
+    public void abrirGoogle(){
+        myWebDriver.get("https://www.google.com/");
+    }
+
+    public void imprimirTituloPagina(){
+        System.out.println(myWebDriver.getTitle());
+    }
+    public void imprimirUrlActual(){
+        System.out.println(myWebDriver.getCurrentUrl());
+    }
+    public void imprimirCodigoFuente(){
+        System.out.println(myWebDriver.getPageSource());
+    }
+
+
+
+    public void navegarAUrl(String web){
+        myWebDriver.navigate().to(web);
+    }
+
+    public void moverAtras(){
+        myWebDriver.navigate().back();
+    }
+
+    public void moverAdelante(){
+        myWebDriver.navigate().forward();
+    }
+
+    public void refrescarUrl(){
+        myWebDriver.navigate().refresh();
+    }
+
 }

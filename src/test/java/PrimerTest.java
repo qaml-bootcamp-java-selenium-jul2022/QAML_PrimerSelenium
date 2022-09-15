@@ -11,7 +11,7 @@ public class PrimerTest extends BaseTest {
     @BeforeTest
     public void antesDeLaPrueba() {
         primerStep = new PrimerStep(myWebDriver);
-        primerStep.visitarPagina();
+        primerStep.visitarPagina("https://www.google.com");
     }
 
     @Test

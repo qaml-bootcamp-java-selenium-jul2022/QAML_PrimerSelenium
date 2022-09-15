@@ -1,5 +1,10 @@
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.Properties;
 
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,9 +15,11 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BaseTest {
-    File rutaAChromeDriver = new File("C:\\Users\\Ryzen\\Documents\\chromedriver.exe");
-    File rutaAFirefoxDriver = new File("C:\\Users\\Ryzen\\Documents\\geckodriver.exe");
-    File rutaAEdgeDriver = new File("C:\\Users\\Ryzen\\Documents\\msedgedriver.exe");
+    String propertiesFileNameLocalConfig = "qaml_primerselenium_local.properties";
+    File rutaAChromeDriver = new File(getPropoerty(propertiesFileNameLocalConfig, "CHROME_DRIVER_PATH"));
+    File rutaAFirefoxDriver = new File(getPropoerty(propertiesFileNameLocalConfig, "CHROME_DRIVER_PATH"));
+    File rutaAEdgeDriver = new File(getPropoerty(propertiesFileNameLocalConfig, "CHROME_DRIVER_PATH"));
+
     public WebDriver myWebDriver = getWebDriver(Navegadores.CHROME);
 
     private WebDriver getWebDriver(Navegadores navegador) {
@@ -66,6 +73,24 @@ public class BaseTest {
 
     void testInstanciaWebDriver() {
         WebDriver nuevaInstancia = getWebDriver(Navegadores.CHROME);
+    }
+
+    public String getPropoerty(String propertiesFile, String key) {
+        Properties properties = new Properties();
+        InputStream inputStream = null;
+        String propertyValue = null;
+
+        try {
+            inputStream = new FileInputStream(propertiesFile);
+            properties.load(inputStream);
+            propertyValue = properties.getProperty(key);
+            inputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            inputStream.close();
+        }finally {
+            return propertyValue;
+        }
     }
 
 }
