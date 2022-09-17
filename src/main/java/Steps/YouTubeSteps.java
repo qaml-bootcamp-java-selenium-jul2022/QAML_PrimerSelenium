@@ -15,4 +15,8 @@ public class YouTubeSteps extends BaseSteps{
         WebElement searchBox = paginaYouTube.getYouTubeSearchBox();
         searchBox.sendKeys(texto);
     }
+
+    public void elSearchBoxIsDisplayed(){
+
+    }
 }

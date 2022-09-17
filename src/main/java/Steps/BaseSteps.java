@@ -9,8 +9,11 @@ public class BaseSteps {
         myWebDriver = webDriver;
     }
 
-    public void clickElement(WebElement webElement){
-        System.out.println("clicking element");
-        webElement.click();
+    public void abrirURL(String url){
+        myWebDriver.get(url);
+    }
+
+    public void quitarWebDriver(){
+        myWebDriver.quit();
     }
 }

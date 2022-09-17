@@ -29,25 +29,29 @@ public class PrimerSteps extends BaseSteps{
 
     public void refrescarNavegador(){
         myWebDriver.navigate().refresh();
-        System.out.println(myWebDriver.getCurrentUrl());
+        obtenerURLActual();
     }
 
     public void navegarAFacebook(){
         myWebDriver.navigate().to(facebookURL);
-        System.out.println(myWebDriver.getCurrentUrl());
+        obtenerURLActual();
     }
     public void navegarAESPN(){
         myWebDriver.navigate().to(espnURL);
-        System.out.println(myWebDriver.getCurrentUrl());
+        obtenerURLActual();
     }
 
     public void retrocederEnNavegador(){
         myWebDriver.navigate().back();
-        System.out.println(myWebDriver.getCurrentUrl());
+        obtenerURLActual();
     }
     public void avanzarEnNavegador(){
         myWebDriver.navigate().forward();
-        System.out.println(myWebDriver.getCurrentUrl());
+        obtenerURLActual();
+    }
+
+    public void abrirURL(String url){
+        myWebDriver.get(url);
     }
 
 }
