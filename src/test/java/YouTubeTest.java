@@ -1,7 +1,4 @@
 import Steps.YouTubeSteps;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class YouTubeTest extends BaseTest {
