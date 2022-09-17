@@ -1,5 +1,4 @@
-import java.io.*;
-import java.util.Properties;
+package Steps;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,17 +8,18 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+import java.io.File;
 
 public class BaseTest {
-
-    String propertiesFileNameLocalConfig = "qaml_primerselenium_local.properties";
-    public WebDriver myWebDriver = myWebDriver(Navegadores.CHROME);
+    File rutaAChromeDriver = new File("D:\\seledriver\\selechromedriver\\chromedriver.exe");
+    File rutaAFirefoxDriver = new File("D:\\seledriver\\selefirefoxdriver\\geckodriver.exe");
+    File rutaAEdgeDriver = new File("D:\\seledriver\\seleegdedriver\\msedgedriver.exe");
+    public WebDriver myWebDriver = myWebDriver(Navegadores.EDGE);
 
     private WebDriver myWebDriver(Navegadores navegador) {
-    String chromeDriver = getProperty(propertiesFileNameLocalConfig, "CHROME_DRIVER_PATH");
-        File rutaAChromeDriver = new File(chromeDriver);
-        File rutaAFirefoxDriver = new File(getProperty(propertiesFileNameLocalConfig, "FIREFOX_DRIVER_PATH"));
-        File rutaAEdgeDriver = new File(getProperty(propertiesFileNameLocalConfig, "EDGE_DRIVER_PATH"));
 
         //Aplica para todos los WebDrivers
         DesiredCapabilities capacidadesDeseadas = new DesiredCapabilities();
@@ -69,25 +69,15 @@ public class BaseTest {
         return myWebDriver;
     }
 
-    void testInstanciaWebDriver() {
-        WebDriver nuevaInstancia = myWebDriver(Navegadores.CHROME);
+    @BeforeTest
+    public void antesDeLaPrueba(){
+        System.out.println("Metodo Before (antes) test");
+        myWebDriver.get("https://www.google.com");
     }
 
-    public String getProperty(String propertiesFile, String key) {
-        Properties properties = new Properties();
-        InputStream inputStream = null;
-        String propertyValue = null;
-        try {
-            inputStream = new FileInputStream(propertiesFile);
-            properties.load(inputStream);
-            propertyValue = properties.getProperty(key);
-            inputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            inputStream.close();
-        } finally {
-            return propertyValue;
-        }
+    @AfterTest
+    public void despuesDeLaPrueba(){
+        System.out.println("Metodo After (despues) de la prueba");
+        myWebDriver.quit();//cierra toda la sesion de memoria; CLOSE solo la pestaña actual
     }
-
 }
