@@ -38,4 +38,24 @@ public class DemoQaSteps extends BaseSteps{
         WebElement submitButton = demoQaPage.getSubmitButton();
         submitButton.isEnabled();
     }
+
+    public void settearFullName( String name){
+        WebElement fullName = demoQaPage.getFullNameTextBox();
+        fullName.sendKeys(name);
+    }
+
+    public void settearEmail(String email){
+        WebElement sendedEmail = demoQaPage.getEmailTextBox();
+        sendedEmail.sendKeys(email);
+    }
+
+    public void settearCurrentAddress(String address){
+        WebElement sendedAddress = demoQaPage.getCurrentAddressTextBox();
+        sendedAddress.sendKeys(address);
+    }
+
+    public  void settearPermanentAddress(String permanentAddress){
+        WebElement sendedPermanentAddress = demoQaPage.getPermanentAddressTextBox();
+        sendedPermanentAddress.sendKeys(permanentAddress);
+    }
 }
