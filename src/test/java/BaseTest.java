@@ -13,8 +13,13 @@ public class BaseTest {
     File rutaAFirefoxDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\geckodriver.exe");
     File rutaAEdgeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\msedgedriver.exe");
 
+
     public WebDriver myWebDriver = getWebDeriver(Navegadores.CHROME);
     private WebDriver getWebDeriver(Navegadores navegador){
+
+        //File rutaAChromeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\chromedriver.exe");
+        //File rutaAFirefoxDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\geckodriver.exe");
+        //File rutaAEdgeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\msedgedriver.exe");
 
         //Aplica para todos los WebDrivers
         DesiredCapabilities capacidadesDeseadas = new DesiredCapabilities();
