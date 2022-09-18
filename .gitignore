@@ -8,3 +8,8 @@
 .idea/vcs.xml
 *.class
 *.xml
+*.xml
+*.iml
+.idea/compiler.xml
+.idea/misc.xml
+pom.xml
