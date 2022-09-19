@@ -1,3 +1,6 @@
+import java.io.*;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,13 +13,22 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 
 public class BaseTest {
-    File rutaAChromeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\chromedriver.exe");
-    File rutaAFirefoxDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\geckodriver.exe");
-    File rutaAEdgeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\msedgedriver.exe");
+
+    String propertiesFileNameLocalConfig = "qaml_primerselenium_local.properties";
+
+    //File rutaAChromeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\chromedriver.exe");
+    //File rutaAFirefoxDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\geckodriver.exe");
+    //File rutaAEdgeDriver = new File("C:\\Users\\judli\\IdeaProjects\\WebDrivers\\msedgedriver.exe");
 
     public WebDriver myWebDriver = getWebDeriver(Navegadores.CHROME);
 
     private WebDriver getWebDeriver(Navegadores navegador){
+
+        String chromeDriver = getProperty(propertiesFileNameLocalConfig, "CHROME_DRIVER_PATH");
+
+        File rutaAChromeDriver = new File(chromeDriver);
+        File rutaAFirefoxDriver = new File(getProperty(propertiesFileNameLocalConfig,"FIREFOX_DRIVER_PATH"));
+        File rutaAEdgeDriver = new File(propertiesFileNameLocalConfig,"EDGE_DRIVER_PATH");
 
         //Aplica para todos los WebDrivers
         DesiredCapabilities capacidadesDeseadas = new DesiredCapabilities();
@@ -68,5 +80,24 @@ public class BaseTest {
 void testInstanciaWebDriver () {
         WebDriver nuevaInstancia = getWebDeriver(Navegadores.CHROME);
 }
+
+    public String getProperty(String propertiesFile, String key) {
+        Properties properties = new Properties();
+        InputStream inputStream = null;
+        String propertyValue = null;
+
+        try{
+            inputStream = new FileInputStream("qaml_primerselenium_local.properties");
+            properties.load(inputStream);
+            propertyValue = properties.getProperty(key);
+            inputStream.close();
+        }  catch (Exception e) {
+            e.printStackTrace();
+            inputStream.close();
+        } finally {
+            return propertyValue;
+        }
+
+    }
 
 }

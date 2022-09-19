@@ -9,4 +9,12 @@ public class BaseSteps {
         myWebDriver = webDriverDeTests;
     }
 
+    public void abrirURL(String url) {
+        myWebDriver.get(url);
+    }
+
+    public void quitarWebDriver() {
+        myWebDriver.quit();
+    }
+
 }

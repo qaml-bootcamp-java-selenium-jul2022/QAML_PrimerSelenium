@@ -1,3 +1,17 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+.idea/.name
+.idea/.name
+.idea/.name
+.idea/compiler.xml
+.idea/misc.xml
+.idea/runConfigurations.xml
+.idea/vcs.xml
+*.class
+*.xml
+*.xml
+*.iml
+.idea/compiler.xml
+.idea/misc.xml
+pom.xml

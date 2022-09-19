@@ -14,6 +14,26 @@ public class PrimerSteps extends BaseSteps{
         myWebDriver.get(paginaAbrir);
     }
 
+    public void imprimirTituloPagina() {
+        System.out.println(myWebDriver.getTitle());
+    }
+
+    public void imprimirURLActual() {
+        System.out.println(myWebDriver.getCurrentUrl());
+    }
+
+    public void imprimirCodigoFuente() {
+        System.out.println(myWebDriver.getPageSource());
+    }
+
+    public void cerrarNavegador() {
+        myWebDriver.close();
+    }
+
+    public void abrirURL(String url) {
+        myWebDriver.get(url);
+    }
+
     public void obtenerURL(){
         System.out.println("La URL Abierta es: "+myWebDriver.getCurrentUrl());
     }
