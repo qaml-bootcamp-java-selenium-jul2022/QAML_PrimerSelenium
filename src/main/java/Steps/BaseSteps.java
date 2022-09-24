@@ -18,7 +18,7 @@ public class BaseSteps {
     }
 
     public boolean verifyUrl(String url){
-        if (Objects.equals(url, myWebDriver.getCurrentUrl())) {
+        if (url.equals(myWebDriver.getCurrentUrl())) {
             return true;
         }else {
             return false;
@@ -26,11 +26,11 @@ public class BaseSteps {
     }
     public void checkIfElementIsEnabled (WebElement element){
         element.isEnabled();
-        System.out.println("El elemento: " + element.getAttribute("id") + " esta activo");
+        System.out.println("El elemento: " + element.getText() + " esta activo");
     }
     public void checkIfElementIsDisplayed (WebElement element){
         element.isDisplayed();
-        System.out.println("El elemento: " + element.getAttribute("id") + " es visible");
+        System.out.println("El elemento: " + element.getText() + " es visible");
     }
 
     public void sendTextToElement (WebElement element,String texto){

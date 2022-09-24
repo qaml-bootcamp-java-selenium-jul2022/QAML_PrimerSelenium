@@ -33,5 +33,4 @@ public class DemoQaTests extends BaseTest{
         demoQaSteps.cerrarNavegador();
     }
 
-
 }
