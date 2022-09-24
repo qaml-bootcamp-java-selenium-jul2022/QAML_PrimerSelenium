@@ -10,8 +10,14 @@ public class AutomationPracticeExercisesPage extends BasePage {
         super(webDriver);
     }
 
-    public WebElement fullNameTextField() {
-        return myWebDriver.findElement(By.id("userName"));
+    public WebElement womenTab() {
+        return myWebDriver.findElement(By.xpath("//a[@title='Dresses']"));
+    }
+    public WebElement dressesTab() {
+        return myWebDriver.findElement(By.xpath("//a[@title='Dresses']"));
+    }
+    public WebElement tshirtsTab() {
+        return myWebDriver.findElement(By.xpath("//*[@id='block_top_menu']/ul/li[3]/a"));
     }
 
 }
