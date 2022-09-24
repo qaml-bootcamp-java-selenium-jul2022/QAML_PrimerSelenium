@@ -25,4 +25,19 @@ public class DemoQAPage extends BasePage {
         return myWebDriver.findElement(By.id("permanentAddress"));
     }
 
+    public WebElement getElementsButton(){
+        return myWebDriver.findElement(By.xpath("//div[@class='card-body']//h5[contains(text(),'Elements')]"));
+    }
+
+    public WebElement getTextBoxOnMenu(){
+        return myWebDriver.findElement(By.xpath("//div[@class='element-list collapse show']//li[@id='item-0']/span[@class = 'text']"));
+    }
+
+    public WebElement getSubmitButton(){
+        return myWebDriver.findElement(By.id("submit"));
+    }
+    public WebElement getOutputSubmittedForm(){
+        return myWebDriver.findElement(By.id("output"));
+    }
+
 }
