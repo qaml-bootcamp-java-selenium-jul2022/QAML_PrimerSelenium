@@ -1,8 +1,6 @@
 import Steps.DemoQASteps;
-import Steps.PracticeTestAutomationSteps;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class DemoQATest extends BaseTest {

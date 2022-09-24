@@ -1,5 +1,4 @@
 import Steps.PracticeTestAutomationSteps;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;

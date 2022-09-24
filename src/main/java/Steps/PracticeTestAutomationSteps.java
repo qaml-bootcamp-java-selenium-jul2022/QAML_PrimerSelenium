@@ -61,14 +61,12 @@ public class PracticeTestAutomationSteps extends BaseSteps {
     public String getSuccessMessage() {
         WebElement message = automationPage.loginSuccessMessage();
         String text = message.getText();
-        System.out.println(text);
         return text;
     }
 
     public String getErrorMessage() {
         WebElement message = automationPage.loginError();
         String text = message.getText();
-        System.out.println(text);
         return text;
     }
 
