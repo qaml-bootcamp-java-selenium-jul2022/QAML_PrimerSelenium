@@ -1,0 +1,6 @@
+
+qaml_primerselenium_local.properties
+*.class
+*.class
+target/classes/Steps/ToolsQASteps.class
+qaml_primerselenium_local.properties
