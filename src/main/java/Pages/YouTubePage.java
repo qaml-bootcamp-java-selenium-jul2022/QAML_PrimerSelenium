@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+
 public class YouTubePage extends BasePage{
     public YouTubePage(WebDriver webDriver){
         super(webDriver);
@@ -17,4 +18,6 @@ public class YouTubePage extends BasePage{
     public WebElement clickEnter(){
         return myWebDriver.findElement(By.id("search-icon-legacy"));
     }
+
+
 }

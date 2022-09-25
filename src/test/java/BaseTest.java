@@ -11,13 +11,11 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BaseTest {
+   
+  String propertiesFileNameLocalConfig = "qaml_primerselenium_local.properties";
+  public WebDriver myWebDriver = getWebDriver(Navegadores.CHROME);
+  private WebDriver getWebDriver(Navegadores navegador) {
 
-
-    String propertiesFileNameLocalConfig = "qaml_primerselenium_local.properties";
-
-    public WebDriver myWebDriver = getWebDriver(Navegadores.CHROME);
-
-    private WebDriver getWebDriver(Navegadores navegador) {
         //Aplica para todos los WebDrivers
         File rutaAChromeDriver = new File(getProperty(propertiesFileNameLocalConfig,"CHROME_DRIVER_PATH"));
         File rutaAFirefoxDriver = new File(getProperty(propertiesFileNameLocalConfig,"FIREFOX_DRIVER_PATH"));
@@ -90,5 +88,4 @@ public class BaseTest {
             return propertyValue;
         }
     }
-
 }

@@ -7,6 +7,7 @@ public class PrimerSteps extends BaseSteps{
         super(webDriver);
     }
 
+
     String facebookURL = "https://www.facebook.com/";
     String espnURL = "https://www.espn.com.mx/";
     public void abrirURLEnBrowser(){

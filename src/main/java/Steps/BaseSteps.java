@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 
 public class BaseSteps {
     public WebDriver myWebDriver;
+
     public BaseSteps (WebDriver webDriver) {
         myWebDriver = webDriver;
     }
@@ -14,6 +15,7 @@ public class BaseSteps {
     }
 
     public void quitarWebDriver(){
+
         myWebDriver.quit();
     }
 }
