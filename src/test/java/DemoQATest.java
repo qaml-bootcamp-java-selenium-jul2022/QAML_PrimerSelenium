@@ -41,7 +41,10 @@ public class DemoQATest extends BaseTest{
     }
     @Test
     public void requerimiento3(){
+        demoQASteps.enviarNombreCompleto("test1");
         demoQASteps.enviarCorreo("asdasd");
+        demoQASteps.enviarDireccionActual("alkjsdblhbakjsdb test2");
+        demoQASteps.enviarDireccionPermanente("dir permanente");
         demoQASteps.clickSubmitButton();
         Assert.assertEquals(demoQASteps.outputFormIsDisplayed(),false);
     }

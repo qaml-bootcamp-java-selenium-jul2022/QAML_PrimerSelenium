@@ -24,16 +24,49 @@ public class AutomationPracticeTests extends BaseTest{
 
         String expectedURL = "http://automationpractice.com/index.php?id_category=3&controller=category";
         automationPracticeSteps.clickOnWomenOption();
+
         Assert.assertEquals(automationPracticeSteps.womenCategoryIsDisplayed(),true);
         Assert.assertEquals(expectedURL,automationPracticeSteps.myWebDriver.getCurrentUrl());
 
         automationPracticeSteps.clickOnDressOption();
-        Assert.assertEquals(automationPracticeSteps.dressCategoryIsDisplayed(),true);
+        Assert.assertNotEquals(expectedURL,automationPracticeSteps.myWebDriver.getCurrentUrl());
 
         automationPracticeSteps.clickOnTshirtOption();
-        Assert.assertEquals(automationPracticeSteps.tshirtCategoryIsDisplayed(),true);
+        Assert.assertNotEquals(expectedURL,automationPracticeSteps.myWebDriver.getCurrentUrl());
 
+    }
+    @Test
+    public void requerimiento7(){
+        String expectedURL = "http://automationpractice.com/index.php?id_category=3&controller=category";
+        automationPracticeSteps.clickOnWomenOption();
+        Assert.assertEquals(automationPracticeSteps.myWebDriver.getCurrentUrl(),expectedURL);
+        Assert.assertEquals(automationPracticeSteps.bannerIsDisplayed(),true);
+        Assert.assertEquals(automationPracticeSteps.secondSentenceFromBannerIsDisplayed(),true);
+        Assert.assertEquals(automationPracticeSteps.thirdSentenceFromBannerIsDisplayed(),true);
+        Assert.assertEquals(automationPracticeSteps.totalProductsIsDisplayed(),true);
 
+    }
+
+    @Test
+    public void requerimiento8(){
+        String expectedURL = "http://automationpractice.com/index.php?id_category=8&controller=category";
+        automationPracticeSteps.clickOnDressOption();
+        Assert.assertEquals(automationPracticeSteps.myWebDriver.getCurrentUrl(),expectedURL);
+        Assert.assertEquals(automationPracticeSteps.bannerIsDisplayed(),true);
+        Assert.assertEquals(automationPracticeSteps.firstSentenceFromBannerIsDisplayed(),true);
+        Assert.assertEquals(automationPracticeSteps.secondSentenceFromBannerIsDisplayed(),true);
+        Assert.assertEquals(automationPracticeSteps.totalProductsIsDisplayed(),true);
+    }
+
+    @Test
+    public void requerimiento9(){
+        String expectedURL = "http://automationpractice.com/index.php?id_category=5&controller=category";
+        automationPracticeSteps.clickOnTshirtOption();
+        Assert.assertEquals(automationPracticeSteps.myWebDriver.getCurrentUrl(),expectedURL);
+        Assert.assertEquals(automationPracticeSteps.bannerIsDisplayed(),true);
+        Assert.assertEquals(automationPracticeSteps.firstSentenceFromBannerIsDisplayed(),true);
+        Assert.assertEquals(automationPracticeSteps.secondSentenceFromBannerIsDisplayed(),true);
+        Assert.assertEquals(automationPracticeSteps.totalProductsIsDisplayed(),true);
     }
 
     @AfterTest

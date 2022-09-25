@@ -59,4 +59,33 @@ public class AutomationPracticeSteps extends AutomationPracticePage {
     public String getCurrentURL(){
         return automationPracticePage.myWebDriver.getCurrentUrl();
     }
+
+    public boolean bannerIsDisplayed(){
+        WebElement banner = automationPracticePage.getBanner();
+        return banner.isDisplayed();
+    }
+    public boolean firstSentenceFromBannerIsDisplayed(){
+        WebElement firstSentence = automationPracticePage.getFirstSentenceFromBanner();
+        return firstSentence.isDisplayed();
+    }
+    public boolean secondSentenceFromBannerIsDisplayed(){
+        WebElement secondSentence = automationPracticePage.getSecondSentenceFromBanner();
+        return secondSentence.isDisplayed();
+    }
+
+    public boolean thirdSentenceFromBannerIsDisplayed(){
+        WebElement thirdSentence = automationPracticePage.getThirdSentenceFromBanner();
+        return thirdSentence.isDisplayed();
+    }
+
+    public boolean totalProductsIsDisplayed(){
+        WebElement totalProduct = automationPracticePage.getTotalProductsDisplayed();
+        return totalProduct.isDisplayed();
+    }
+
+
+
+
+
+
 }

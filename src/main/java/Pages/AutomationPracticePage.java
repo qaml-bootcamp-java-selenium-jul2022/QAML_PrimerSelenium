@@ -33,5 +33,23 @@ public class AutomationPracticePage extends BasePage {
         return myWebDriver.findElement(By.xpath("//h1//span[@class='cat-name']"));
     }
 
+    public WebElement getBanner(){
+        return myWebDriver.findElement(By.xpath("//span[@class='category-name']"));
+    }
+
+    public WebElement getFirstSentenceFromBanner(){
+        return myWebDriver.findElement(By.xpath("//div[@class='rte']/child::p[1]"));
+    }
+    public WebElement getSecondSentenceFromBanner(){
+        return myWebDriver.findElement(By.xpath("//div[@class='rte']/child::p[2]"));
+    }
+    public WebElement getThirdSentenceFromBanner(){
+        return myWebDriver.findElement(By.xpath("//div[@class='rte']/child::p[3]"));
+    }
+    public WebElement getTotalProductsDisplayed(){
+        return myWebDriver.findElement(By.xpath("//span[@class='heading-counter']"));
+    }
+
+
 
 }
