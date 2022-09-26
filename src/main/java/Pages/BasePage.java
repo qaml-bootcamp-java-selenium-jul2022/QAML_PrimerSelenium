@@ -7,5 +7,7 @@ public class BasePage {
 
     public BasePage(WebDriver webDriver) {
         myWebDriver = webDriver;
+
+
     }
 }

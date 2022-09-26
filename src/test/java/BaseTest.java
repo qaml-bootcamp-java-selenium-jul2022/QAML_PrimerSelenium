@@ -12,19 +12,23 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BaseTest {
 
-    String propertiesFileNameLocalConfig = "qaml_primerselenium_local.properties";
+
+    String propertiesFileNameLocationConfig = "qaml_primerselenium_local.properties";
+
 
     public WebDriver myWebDriver = getWebDeriver(Navegadores.CHROME);
 
     public WebDriver getWebDeriver(Navegadores navegador) {
 
-        String chromeDriver = getProperty(propertiesFileNameLocalConfig, "CHROME_DRIVER_PATH");
-
-        File rutaAChromeDriver = new File(chromeDriver);
-        File rutaAFirefoxDriver = new File(getProperty(propertiesFileNameLocalConfig,"FIREFOX_DRIVER_PATH"));
-        File rutaAEdgeDriver = new File(propertiesFileNameLocalConfig,"EDGE_DRIVER_PATH");
 
         //Aplica para todos los WebDrivers
+
+    String chromeDriver = getProperty(propertiesFileNameLocationConfig,"CHROME_DRIVER_PATH");
+
+        File rutaAChromeDriver = new File(getProperty(propertiesFileNameLocationConfig,"CHROME_DRIVER_PATH"));
+        File rutaAFirefoxDriver = new File(getProperty(propertiesFileNameLocationConfig,"FIREFOX_DRIVER_PATH"));
+        File rutaAEdgeDriver = new File(getProperty(propertiesFileNameLocationConfig,"EDGE_DRIVER_PATH"));
+
         DesiredCapabilities capacidadesDeseadas = new DesiredCapabilities();
 
         switch (navegador){
@@ -75,6 +79,7 @@ public class BaseTest {
         WebDriver nuevaInstancia = getWebDeriver(Navegadores.CHROME);
 }
 
+
     public String getProperty(String propertiesFile, String key) {
         Properties properties = new Properties();
         InputStream inputStream = null;
@@ -93,5 +98,6 @@ public class BaseTest {
         }
 
     }
+
 
 }
