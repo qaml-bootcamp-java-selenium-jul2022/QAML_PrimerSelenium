@@ -16,6 +16,18 @@ public class EjerciciosEnClaseTests extends BaseTest {
 
     @Test
     public void seleniumEjercicio3() {
-
+        primerSteps.abrirGoogle();
+        primerSteps.imprimirURLActual();
+        primerSteps.moverAPagina("https://www.facebook.com/");
+        primerSteps.imprimirURLActual();
+        primerSteps.moverAPagina("https://www.espn.com.co/");
+        primerSteps.imprimirURLActual();
+        primerSteps.backPage(2);
+        primerSteps.imprimirURLActual();
+        primerSteps.forwardPage(2);
+        primerSteps.imprimirURLActual();
+        primerSteps.actualizarPagina();
+        primerSteps.imprimirURLActual();
+        primerSteps.cerrarNavegador();
     }
 }

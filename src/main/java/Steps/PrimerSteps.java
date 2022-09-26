@@ -47,4 +47,24 @@ public class PrimerSteps extends BaseSteps{
         myWebDriver.quit(); //cierra todas las ventanas abiertas
     }
 
+    public void moverAPagina(String pagina){
+        myWebDriver.navigate().to(pagina);
+    }
+
+    public void backPage(int veces){
+        for(int i=0;i<veces;i++){
+            myWebDriver.navigate().back();
+        }
+    }
+
+    public void forwardPage(int veces){
+        for(int i=0;i<veces;i++){
+            myWebDriver.navigate().forward();
+        }
+    }
+
+    public void actualizarPagina(){
+        myWebDriver.navigate().refresh();
+    }
+
 }
