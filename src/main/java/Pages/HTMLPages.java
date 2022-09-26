@@ -10,14 +10,14 @@ public class HTMLPages extends BasePage{
     }
 
     public WebElement searchUser(){
-        return myWebdriver.findElement(By.id("username"));
+        return myWebDriver.findElement(By.id("username"));
     }
 
     public WebElement searchPass(){
-        return myWebdriver.findElement(By.id("password"));
+        return myWebDriver.findElement(By.id("password"));
     }
 
     public WebElement seleccionarLogin(){
-        return myWebdriver.findElement(By.name("login"));
+        return myWebDriver.findElement(By.name("login"));
     }
 }

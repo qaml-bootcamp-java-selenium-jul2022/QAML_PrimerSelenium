@@ -10,28 +10,28 @@ public class PracticeAutomationPage extends BasePage{
     }
 
     public WebElement getUserNameTextBox(){
-        return myWebdriver.findElement(By.id("username"));
+        return myWebDriver.findElement(By.id("username"));
     }
 
     public WebElement getPasswordTextBox(){
-        return myWebdriver.findElement(By.id("password"));
+        return myWebDriver.findElement(By.id("password"));
     }
 
     public WebElement getSubmitButton(){
-        return myWebdriver.findElement(By.id("submit"));
+        return myWebDriver.findElement(By.id("submit"));
     }
 
     public WebElement getLogOutButton(){
-        return myWebdriver.findElement(By.xpath("//*[@id=\"loop-container\"]/div/article/div[2]/div/div/div/a"));
+        return myWebDriver.findElement(By.xpath("//*[@id=\"loop-container\"]/div/article/div[2]/div/div/div/a"));
 
     }
 
     public WebElement getSuccessMessage(){
-        return myWebdriver.findElement(By.xpath("//*[@id=\"loop-container\"]/div/article/div[1]/h1"));
+        return myWebDriver.findElement(By.xpath("//*[@id=\"loop-container\"]/div/article/div[1]/h1"));
     }
 
     public WebElement getErrorMessage(){
-        return myWebdriver.findElement(By.id("error"));
+        return myWebDriver.findElement(By.id("error"));
     }
 
 }

@@ -11,11 +11,11 @@ public class YouTubePages extends BasePage {
     }
 
     public WebElement getYouTubeSearchBox() {
-        return myWebdriver.findElement(By.name("search_query"));
+        return myWebDriver.findElement(By.name("search_query"));
 
     }
     public WebElement clickEnter(){
-         return myWebdriver.findElement(By.id("search-icon-legacy"));
+         return myWebDriver.findElement(By.id("search-icon-legacy"));
 
     }
 }

@@ -12,11 +12,11 @@ public class HtmlSteps extends BasePage {
         super(webDriver);
     }
 
-    HTMLPages htmlpages = new HTMLPages(myWebdriver);
+    HTMLPages htmlpages = new HTMLPages(myWebDriver);
 
 
     public void abrirURL(String url) {
-        myWebdriver.get(url);
+        myWebDriver.get(url);
 
     }
 

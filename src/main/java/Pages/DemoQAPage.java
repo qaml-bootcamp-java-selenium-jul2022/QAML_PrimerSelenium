@@ -12,18 +12,18 @@ public class DemoQAPage extends BasePage{
     }
 
     public WebElement getFullName (){
-       return myWebdriver.findElement(By.id("userName"));
+       return myWebDriver.findElement(By.id("userName"));
     }
 
     public WebElement getEmail (){
-        return myWebdriver.findElement(By.id("userEmail"));
+        return myWebDriver.findElement(By.id("userEmail"));
     }
 
     public WebElement getCurrentAddress (){
-        return myWebdriver.findElement(By.id("currentAddress"));
+        return myWebDriver.findElement(By.id("currentAddress"));
     }
 
     public WebElement getPermanentAddress (){
-        return myWebdriver.findElement(By.id("permanentAddress"));
+        return myWebDriver.findElement(By.id("permanentAddress"));
     }
 }

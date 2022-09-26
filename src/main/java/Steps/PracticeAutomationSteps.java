@@ -29,8 +29,8 @@ public class PracticeAutomationSteps extends BaseSteps{
     }
 
     public String verificarURL(){
-        System.out.println(PAPage.myWebdriver.getCurrentUrl());
-        return PAPage.myWebdriver.getCurrentUrl().toString();
+        System.out.println(PAPage.myWebDriver.getCurrentUrl());
+        return PAPage.myWebDriver.getCurrentUrl().toString();
     }
     public String verificarMensaje(){
 
