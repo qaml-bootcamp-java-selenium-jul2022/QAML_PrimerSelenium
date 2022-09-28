@@ -1,6 +1,7 @@
 package Steps;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class BaseSteps {
     public WebDriver myWebDriver;
@@ -9,11 +10,12 @@ public class BaseSteps {
         myWebDriver = webDriver;
     }
 
-    public void abrirURL(String url) {
+    public void abrirURL(String url){
         myWebDriver.get(url);
     }
 
-    public void quitarWebDriver() {
+    public void quitarWebDriver(){
+
         myWebDriver.quit();
     }
 }

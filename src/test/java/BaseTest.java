@@ -11,20 +11,16 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BaseTest {
-
-    String propertiesFileNameLocalConfig = "qaml_primerselenium_local.properties";
-
-    public WebDriver myWebDriver = getWebDeriver(Navegadores.CHROME);
-
-    public WebDriver getWebDeriver(Navegadores navegador) {
-
-        String chromeDriver = getProperty(propertiesFileNameLocalConfig, "CHROME_DRIVER_PATH");
-
-        File rutaAChromeDriver = new File(chromeDriver);
-        File rutaAFirefoxDriver = new File(getProperty(propertiesFileNameLocalConfig,"FIREFOX_DRIVER_PATH"));
-        File rutaAEdgeDriver = new File(propertiesFileNameLocalConfig,"EDGE_DRIVER_PATH");
+   
+  String propertiesFileNameLocalConfig = "qaml_primerselenium_local.properties";
+  public WebDriver myWebDriver = getWebDriver(Navegadores.CHROME);
+  private WebDriver getWebDriver(Navegadores navegador) {
 
         //Aplica para todos los WebDrivers
+        File rutaAChromeDriver = new File(getProperty(propertiesFileNameLocalConfig,"CHROME_DRIVER_PATH"));
+        File rutaAFirefoxDriver = new File(getProperty(propertiesFileNameLocalConfig,"FIREFOX_DRIVER_PATH"));
+        File rutaAEdgeDriver = new File(getProperty(propertiesFileNameLocalConfig,"EDGE_DRIVER_PATH"));
+
         DesiredCapabilities capacidadesDeseadas = new DesiredCapabilities();
 
         switch (navegador){
@@ -72,26 +68,24 @@ public class BaseTest {
     }
 
     void testInstanciaWebDriver () {
-        WebDriver nuevaInstancia = getWebDeriver(Navegadores.CHROME);
-}
-
-    public String getProperty(String propertiesFile, String key) {
+            WebDriver nuevaInstancia = getWebDriver(Navegadores.CHROME);
+    }
+    public String getProperty (String propertiesFile, String key) {
         Properties properties = new Properties();
         InputStream inputStream = null;
         String propertyValue = null;
 
-        try{
+        try {
             inputStream = new FileInputStream(propertiesFile);
             properties.load(inputStream);
-            propertyValue = properties.getProperty(key);
+            propertyValue=properties.getProperty(key);
             inputStream.close();
-        }  catch (Exception e) {
+        }   catch(Exception e){
             e.printStackTrace();
             inputStream.close();
-        } finally {
+        }finally{
+
             return propertyValue;
         }
-
     }
-
 }
