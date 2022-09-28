@@ -10,7 +10,6 @@ public class YouTubePage extends BasePage{
         super(webDriver);
     }
 
-
     public WebElement getYouTubeSearchBox(){
         return myWebDriver.findElement(By.name("search_query"));
     }
