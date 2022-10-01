@@ -13,32 +13,32 @@ public class PracticeAutomationSteps extends BaseSteps {
     PracticeAutomationPage practiceAutomationPage = new PracticeAutomationPage(myWebDriver);
 
     public void ingresarUsuario(String usuario){
-        WebElement txtusuario = practiceAutomationPage.escribirUserName();
+        WebElement txtusuario = practiceAutomationPage.getUserNameTextBox();
         txtusuario.sendKeys(usuario);
     }
 
     public void ingresarcontrasena(String contrasena){
-        WebElement txtContrasena = practiceAutomationPage.escribirPassword();
+        WebElement txtContrasena = practiceAutomationPage.getPasswordTextBox();
         txtContrasena.sendKeys(contrasena);
     }
 
     public void btnSubmit(){
-        WebElement btnSubmit = practiceAutomationPage.submit();
+        WebElement btnSubmit = practiceAutomationPage.getSubmitButton();
         btnSubmit.click();
     }
 
     public String getTextLoginSuccessfull(){
-        WebElement txtloginSuccessfull = practiceAutomationPage.getTxtloginSuccessfull();
+        WebElement txtloginSuccessfull = practiceAutomationPage.getSuccessMessage();
         return txtloginSuccessfull.getText();
     }
 
     public String getTxtError(){
-        WebElement txtError = practiceAutomationPage.getTxtError();
+        WebElement txtError = practiceAutomationPage.getErrorMessage();
         return txtError.getText();
     }
 
     public String isDisplayedTextError(){
-        WebElement txtError = practiceAutomationPage.getTxtError();
+        WebElement txtError = practiceAutomationPage.getErrorMessage();
         if (txtError.isDisplayed()) {
             return txtError.getText();
         }
@@ -46,7 +46,7 @@ public class PracticeAutomationSteps extends BaseSteps {
     }
 
     public void btnLogout(){
-        WebElement btnLogout = practiceAutomationPage.logout();
+        WebElement btnLogout = practiceAutomationPage.getLogOutButton();
         btnLogout.click();
     }
 }
