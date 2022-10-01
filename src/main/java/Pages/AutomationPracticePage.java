@@ -1,13 +1,18 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class AutomationPracticePage extends BasePage {
     public AutomationPracticePage(WebDriver webDriver) {
         super(webDriver);
     }
+
+
+
     public WebElement getSearchTextBox(){
         return myWebDriver.findElement(By.cssSelector("#search_query_top"));
     }
@@ -50,6 +55,26 @@ public class AutomationPracticePage extends BasePage {
         return myWebDriver.findElement(By.xpath("//span[@class='heading-counter']"));
     }
 
+    public WebElement getElementItem(){
+        return  myWebDriver.findElement(By.xpath("//ul[@id='homefeatured']//img[@title='Faded Short Sleeve T-shirts']"));
 
+    }
+    public WebElement getAddButton(){
+        return myWebDriver.findElement(By.xpath("//ul[@id='homefeatured']//a[@data-id-product = '1']/span"));
+    }
+
+    public WebElement getMoreButton(){
+        //return myWebDriver.findElement(By.xpath("//ul[@id='homefeatured']//div[@class='button-container']//a[contains(@href,'product=1')]/span[contains(text(),'More')]"));
+        return myWebDriver.findElement(By.xpath("//ul[@id='homefeatured']/descendant::a[contains(@href,'product=1')]/span[contains(text(),'More')]"));
+
+    }
+
+    public Point getLastElementShowedLocation(){
+        WebElement element = myWebDriver.findElement(By.xpath("//ul[@id='homefeatured']//img[@title='Faded Short Sleeve T-shirts']"));
+        Point location = element.getLocation();
+        System.out.println("X, Y - coordinates : " + location);
+        return location;
+
+    }
 
 }

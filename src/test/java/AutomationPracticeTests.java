@@ -12,7 +12,7 @@ public class AutomationPracticeTests extends BaseTest{
         automationPracticeSteps.abrirURL("http://automationpractice.com/index.php");
     }
 
-    @Test
+   /* @Test
     public void requerimiento5(){
         Assert.assertEquals(automationPracticeSteps.womenMenuOptionIsDisplayed(),true);
         Assert.assertEquals(automationPracticeSteps.dressMenuOptionIsDisplayed(),true);
@@ -67,8 +67,16 @@ public class AutomationPracticeTests extends BaseTest{
         Assert.assertEquals(automationPracticeSteps.firstSentenceFromBannerIsDisplayed(),true);
         Assert.assertEquals(automationPracticeSteps.secondSentenceFromBannerIsDisplayed(),true);
         Assert.assertEquals(automationPracticeSteps.totalProductsIsDisplayed(),true);
-    }
+    }*/
 
+    @Test
+    public void hacerHoverPrimerArticulo(){
+        automationPracticeSteps.obtenerUbicacionUltimoElemento();
+        automationPracticeSteps.hacerHoverElemento();
+        Assert.assertEquals(automationPracticeSteps.botonAddCartIsDisplayed(), true);
+        Assert.assertEquals(automationPracticeSteps.botonMoreIsDisplayed(), true);
+
+    }
     @AfterTest
     public void despuesDeLaPrueba(){
         automationPracticeSteps.myWebDriver.quit();
