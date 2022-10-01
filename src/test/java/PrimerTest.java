@@ -18,20 +18,31 @@ public class PrimerTest extends BaseTest {
     @Test
     public void obtenerURL() {
         String expectedURL = "https://www.google.com/";
-        System.out.println("La URL abierta es: " + myWebDriver.getCurrentUrl());
+        primerSteps.abrirGoogle();
         Assert.assertEquals(myWebDriver.getCurrentUrl(), expectedURL);
     }
 
     @Test
     public void obtenerTituloPagina() {
         String expectedTitle = "Google";
-        System.out.println("El título de la página es: " + myWebDriver.getTitle());
+        primerSteps.imprimirTituloPagina();
         Assert.assertEquals(myWebDriver.getTitle(), expectedTitle);
     }
+
+    @Test
+    public void obtenerURLActual(){
+        primerSteps.imprimirURLActual();
+    }
+
+    @Test
+    public void obtenerCodigoFuente(){
+        primerSteps.imprimirCodigoFuente();
+    }
+
 
     @AfterTest
     public void despuesDeLaPrueba() {
         System.out.println("Método After (después) de la prueba");
-        myWebDriver.quit();
+        primerSteps.cerrarNavegador();
     }
 }
