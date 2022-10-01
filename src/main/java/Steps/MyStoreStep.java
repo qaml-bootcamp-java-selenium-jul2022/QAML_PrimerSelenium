@@ -157,4 +157,12 @@ public class MyStoreStep extends BaseSteps {
         WebElement moreInfoText = myStorePage.moreInfoText();
         return moreInfoText.getText();
     }
+    public boolean displayBotonFadeShortAddToCart(){
+        WebElement displayAddToCart = myStorePage.botonAddtoCartEnFadeShort();
+        return displayAddToCart.isDisplayed();
+    }
+    public boolean displayBotonFadeShortMore(){
+        WebElement displayMore = myStorePage.botonAddtoCartEnFadeShort();
+        return displayMore.isDisplayed();
+    }
 }

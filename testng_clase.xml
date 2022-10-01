@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Elements Tests">
+    <test verbose="2" preserve-order="true" name="C:\Users\LuisGerardoMunozOrte\OneDrive - Biometria Aplicada SA de CV\Documentos\GitHub\QAML_PrimerSelenium">
+        <classes>
+            <class name="DemoQATest"/>
+            <class name="DemoQAHomeTest"/>
+            <class name="MyStoreTest"/>
+            <class name="TestAutomationMyStoreTest"></class>
+        </classes>
+    </test>
+</suite>
