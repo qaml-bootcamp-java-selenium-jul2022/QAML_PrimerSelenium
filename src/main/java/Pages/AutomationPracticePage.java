@@ -50,6 +50,18 @@ public class AutomationPracticePage extends BasePage {
         return myWebDriver.findElement(By.xpath("//span[@class='heading-counter']"));
     }
 
+    //PARTE DE PROYECTO FINAL
+    public WebElement getAddToCart(){
+        return myWebDriver.findElement(By.xpath("//ul[@id='homefeatured']/li/div/div/div/a[@data-id-product='1']"));
+    }
 
+
+    public WebElement getMore(){
+        return myWebDriver.findElement(By.xpath("//ul[@id='homefeatured']/li/div/div/div/a[@data-id-product='1']/following-sibling::*"));
+    }
+
+    public WebElement getShirtShortImg(){
+        return myWebDriver.findElement(By.xpath("//ul[@id='homefeatured']/li/div/div/div/a[@title='Faded Short Sleeve T-shirts']/img[@title='Faded Short Sleeve T-shirts']"));
+    }
 
 }

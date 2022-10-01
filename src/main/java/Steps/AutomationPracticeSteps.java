@@ -3,6 +3,9 @@ package Steps;
 import Pages.AutomationPracticePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+
 
 public class AutomationPracticeSteps extends AutomationPracticePage {
     public AutomationPracticeSteps(WebDriver webDriver) {
@@ -84,8 +87,22 @@ public class AutomationPracticeSteps extends AutomationPracticePage {
     }
 
 
+    //Para proyecto final
+    Actions action = new Actions(myWebDriver);
+    public void encontrarImagen(){
+        action.scrollByAmount(0, 500).perform();
+        WebElement imagen = automationPracticePage.getShirtShortImg();
+        action.moveToElement(imagen).perform();
+    }
 
+    public boolean isDisplayedAdd(){
+        WebElement add = automationPracticePage.getAddToCart();
+        return add.isDisplayed();
+    }
 
-
+    public boolean isDisplayedMore(){
+        WebElement more = automationPracticePage.getMore();
+        return more.isDisplayed();
+    }
 
 }
