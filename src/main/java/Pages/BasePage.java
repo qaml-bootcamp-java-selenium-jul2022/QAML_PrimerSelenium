@@ -8,4 +8,5 @@ public class BasePage {
     public BasePage(WebDriver webDriver){
         myWebDriver = webDriver;
     }
+    //Base Page
 }

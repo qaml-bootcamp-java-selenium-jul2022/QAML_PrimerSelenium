@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HtmlBasicoPage extends BasePage{
-
+//Tarea HTML local
     public HtmlBasicoPage(WebDriver webDriver) {
         super(webDriver);
     }

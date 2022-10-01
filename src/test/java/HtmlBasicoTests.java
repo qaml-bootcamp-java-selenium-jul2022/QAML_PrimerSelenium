@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class HtmlBasicoTests extends BaseTest{
     PrimerSteps ps = new PrimerSteps(myWebDriver);
     HtmlBasicoSteps htmls = new HtmlBasicoSteps(myWebDriver);
-
+//Primeras Tareas
 
     @Test(priority = 1)
     public void abrirUrlPagina(){

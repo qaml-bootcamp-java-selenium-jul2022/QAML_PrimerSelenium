@@ -10,7 +10,7 @@ public class BaseSteps {
         myWebDriver = webDriverDeTests;
     }
     //PASOS REPETITIVOS
-    //
+    //Parte de las primeras tareas
     public void abrirurlnueva(String url){
         myWebDriver.get(url);
     }

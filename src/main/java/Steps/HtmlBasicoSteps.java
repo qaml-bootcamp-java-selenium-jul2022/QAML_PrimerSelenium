@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HtmlBasicoSteps extends BaseSteps{
+    //Tareas HTML Local
     public HtmlBasicoSteps(WebDriver webDriverDeTests) {
         super(webDriverDeTests);
     }
