@@ -7,9 +7,9 @@ public class EjerciciosEnClaseTests extends BaseTest {
 
     @Test
     public void seleniumEjercicio2() {
-        primerSteps.abrirGoogle();
-        primerSteps.imprimirTituloPagina();
-        primerSteps.imprimirURLActual();
+        primerSteps.abrirURL("https://www.google.com/");
+        primerSteps.obtenerTituloPagina();
+        primerSteps.obtenerURLActual();
         primerSteps.imprimirCodigoFuente();
         primerSteps.quitarWebDriver();
     }

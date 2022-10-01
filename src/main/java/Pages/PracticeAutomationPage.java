@@ -5,32 +5,32 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class PracticeAutomationPage extends BasePage{
-
     public PracticeAutomationPage(WebDriver webDriver) {
         super(webDriver);
     }
 
-    public WebElement escribirUserName() {
+    public WebElement getUserNameTextBox(){
         return myWebDriver.findElement(By.id("username"));
     }
 
-    public WebElement escribirPassword(){
+    public WebElement getPasswordTextBox(){
         return myWebDriver.findElement(By.id("password"));
     }
 
-    public WebElement submit(){
+    public WebElement getSubmitButton(){
         return myWebDriver.findElement(By.id("submit"));
     }
 
-    public WebElement getTxtError(){
+    public WebElement getLogOutButton(){
+        return myWebDriver.findElement(By.xpath("//*[@id=\"loop-container\"]/div/article/div[2]/div/div/div/a"));
+
+    }
+
+    public WebElement getSuccessMessage(){
+        return myWebDriver.findElement(By.xpath("//*[@id=\"loop-container\"]/div/article/div[1]/h1"));
+    }
+
+    public WebElement getErrorMessage(){
         return myWebDriver.findElement(By.id("error"));
-    }
-
-    public WebElement getTxtloginSuccessfull(){
-        return myWebDriver.findElement(By.className("post-title"));
-    }
-
-    public WebElement logout(){
-        return myWebDriver.findElement(By.className("has-very-dark-gray-background-color"));
     }
 }

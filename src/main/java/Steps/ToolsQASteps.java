@@ -8,22 +8,24 @@ public class ToolsQASteps extends BaseSteps {
     public ToolsQASteps(WebDriver webDriverTest) {
         super(webDriverTest);
     }
+    ToolsQAPage paginaSelects = new ToolsQAPage(myWebDriver);
 
-    ToolsQAPage toolsQAPage = new ToolsQAPage(myWebDriver);
-    public void escribirFullName(String fullName) {
-        WebElement fullNameTxt = toolsQAPage.fillFullName();
-        fullNameTxt.sendKeys(fullName);
+    public void seleccionarColor(String color) {
+        WebElement selectorDeColores = paginaSelects.selectorColors();
+        paginaSelects.getSelect(selectorDeColores).selectByVisibleText(color);
+        System.out.println("Se seleccionó el color "
+                + paginaSelects.getSelect(selectorDeColores).getFirstSelectedOption().getText());
     }
 
-    public void escribirContrasena(String contrasena) {
+    public void seleccionarPorValor(String value) {
+        WebElement selectorDeColores = paginaSelects.selectorColors();
+        paginaSelects.getSelect(selectorDeColores).selectByValue(value);
+        System.out.println("Se seleccionó el color "
+                + paginaSelects.getSelect(selectorDeColores).getFirstSelectedOption().getText());
     }
 
-    public void login() {
-    }
-
-    public void seleccionarColor(String color){
-       WebElement selectorDeColores = toolsQAPage.selectorColors();
-       toolsQAPage.getSelect(selectorDeColores).selectByVisibleText(color);
-       System.out.printf("Se seleccionó el color " + toolsQAPage.getSelect(selectorDeColores).getFirstSelectedOption());
+    public boolean listaEsMultiple() {
+        WebElement selectorDeColores = paginaSelects.selectorColors();
+        return paginaSelects.getSelect(selectorDeColores).isMultiple();
     }
 }

@@ -4,6 +4,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class PrimerTest extends BaseTest {
     PrimerSteps primerSteps = new PrimerSteps(myWebDriver);
 
