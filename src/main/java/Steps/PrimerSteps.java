@@ -16,10 +16,6 @@ public class PrimerSteps extends BaseSteps{
         return  myWebDriver.getTitle();
     }
 
-    public String imprimirURLActual() {
-        return myWebDriver.getCurrentUrl();
-    }
-
     public void imprimirCodigoFuente() {
         System.out.println(myWebDriver.getPageSource());
     }

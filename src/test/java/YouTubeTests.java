@@ -1,7 +1,7 @@
 import Steps.YouTubeSteps;
 import org.testng.annotations.Test;
 
-public class YouTubeTests extends BaseTest{
+public class YouTubeTests extends BaseTest {
 
     YouTubeSteps youTubeSteps = new YouTubeSteps(myWebDriver);
 

@@ -6,7 +6,7 @@ public class BasicHTMLTest extends BaseTest {
     BasicHTMLSteps basicHTMLSteps = new BasicHTMLSteps(myWebDriver);
 
     @Test
-    public void basicHTML() {
+    public void loginBasicHTML() {
         basicHTMLSteps.abrirURL("file:///C:/Users/elici/Desktop/basicHTML.html");
         basicHTMLSteps.escribirUsuario("elizabeth");
         basicHTMLSteps.escribirContrasena("Correa");

@@ -12,6 +12,9 @@ public class BaseSteps {
     public void abrirURL(String url){
         myWebDriver.get(url);
     }
+    public String imprimirURLActual() {
+        return myWebDriver.getCurrentUrl();
+    }
 
     public void quitarWebDriver () {
         myWebDriver.quit();
