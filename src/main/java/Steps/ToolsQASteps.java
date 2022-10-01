@@ -4,12 +4,10 @@ import Pages.ToolsQAPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ToolsQASteps extends BaseSteps{
-
-    public ToolsQASteps(WebDriver webDriver) {
-        super(webDriver);
+public class ToolsQASteps extends BaseSteps {
+    public ToolsQASteps(WebDriver webDriverTest) {
+        super(webDriverTest);
     }
-
     ToolsQAPage paginaSelects = new ToolsQAPage(myWebDriver);
 
     public void seleccionarColor(String color) {

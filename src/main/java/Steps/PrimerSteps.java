@@ -3,56 +3,40 @@ package Steps;
 import org.openqa.selenium.WebDriver;
 
 public class PrimerSteps extends BaseSteps{
+
     public PrimerSteps(WebDriver webDriver) {
         super(webDriver);
     }
 
-
-    String facebookURL = "https://www.facebook.com/";
-    String espnURL = "https://www.espn.com.mx/";
-    public void abrirURLEnBrowser(){
+    public void abrirGoogle() {
         myWebDriver.get("https://www.google.com/");
     }
-    public void obtenerTituloPagina(){
-        System.out.println("El título de la página es "+ myWebDriver.getTitle());
-    }
-    public void obtenerURLActual(){
-        System.out.println("La url de la pagina es "+myWebDriver.getCurrentUrl());
+
+    public String imprimirTituloPagina() {
+        return  myWebDriver.getTitle();
     }
 
-    public void imprimirCodigoFuente(){
+    public void imprimirCodigoFuente() {
         System.out.println(myWebDriver.getPageSource());
     }
 
-    public void cerrarNavegador(){
-        myWebDriver.close();
+    public void moverAPagina(String pagina){
+        myWebDriver.navigate().to(pagina);
     }
 
-    public void refrescarNavegador(){
+    public void backPage(int veces){
+        for(int i=0;i<veces;i++){
+            myWebDriver.navigate().back();
+        }
+    }
+
+    public void forwardPage(int veces){
+        for(int i=0;i<veces;i++){
+            myWebDriver.navigate().forward();
+        }
+    }
+
+    public void actualizarPagina(){
         myWebDriver.navigate().refresh();
-        obtenerURLActual();
     }
-
-    public void navegarAFacebook(){
-        myWebDriver.navigate().to(facebookURL);
-        obtenerURLActual();
-    }
-    public void navegarAESPN(){
-        myWebDriver.navigate().to(espnURL);
-        obtenerURLActual();
-    }
-
-    public void retrocederEnNavegador(){
-        myWebDriver.navigate().back();
-        obtenerURLActual();
-    }
-    public void avanzarEnNavegador(){
-        myWebDriver.navigate().forward();
-        obtenerURLActual();
-    }
-
-    public void abrirURL(String url){
-        myWebDriver.get(url);
-    }
-
 }

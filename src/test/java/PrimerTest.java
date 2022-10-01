@@ -12,26 +12,27 @@ public class PrimerTest extends BaseTest {
     @BeforeTest
     public void antesDeLaPrueba() {
         System.out.println("Método Before (Antes) Test");
-        myWebDriver.get("https://www.google.com");
+        String URL = ("https://www.google.com/");
+        primerSteps.abrirURL(URL);
     }
 
     @Test
     public void obtenerURL() {
         String expectedURL = "https://www.google.com/";
-        System.out.println("La URL abierta es: " + myWebDriver.getCurrentUrl());
-        Assert.assertEquals(myWebDriver.getCurrentUrl(), expectedURL);
+        Assert.assertEquals(primerSteps.imprimirURLActual(), expectedURL);
+        System.out.println("La URL abierta es: " + primerSteps.imprimirURLActual());
     }
 
     @Test
     public void obtenerTituloPagina() {
         String expectedTitle = "Google";
-        System.out.println("El título de la página es: " + myWebDriver.getTitle());
-        Assert.assertEquals(myWebDriver.getTitle(), expectedTitle);
+        Assert.assertEquals(primerSteps.imprimirTituloPagina(), expectedTitle);
+        System.out.println("El título de la página es: " + primerSteps.imprimirTituloPagina());
     }
 
     @AfterTest
     public void despuesDeLaPrueba() {
         System.out.println("Método After (después) de la prueba");
-        myWebDriver.quit();
+        primerSteps.quitarWebDriver();
     }
 }
