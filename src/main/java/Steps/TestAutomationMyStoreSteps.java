@@ -44,10 +44,19 @@ public class TestAutomationMyStoreSteps extends BaseSteps {
         WebElement addToCart = automationMyStorePage.botonAddtoCartEnFadeShort();
         addToCart.click();
     }
+    public boolean displayBotonFadeShortAddToCart(){
+        WebElement displayAddToCart = automationMyStorePage.botonAddtoCartEnFadeShort();
+        return displayAddToCart.isDisplayed();
+    }
 
     public void clickBotonFadeShortMore(){
         WebElement more = automationMyStorePage.botonMoreEnFadeShort();
         more.click();
+    }
+
+    public boolean displayBotonFadeShortMore(){
+        WebElement displayMore = automationMyStorePage.botonAddtoCartEnFadeShort();
+        return displayMore.isDisplayed();
     }
 
     public String getSuccesfullyAddToCartText() {

@@ -14,7 +14,9 @@ public class TestAutomationMyStoreTest extends BaseTest {
 
         automationMyStoreTest.openURL();
         Assert.assertEquals(automationMyStoreTest.getActualURL(), url);
+        //Assert.assertFalse(automationMyStoreTest.displayBotonFadeShortAddToCart());
         automationMyStoreTest.hoverEnImagenFadeShort();
+        Assert.assertTrue(automationMyStoreTest.displayBotonFadeShortAddToCart());
         automationMyStoreTest.clickBotonFadeShortAddToCart();
         System.out.println(automationMyStoreTest.getSuccesfullyAddToCartText());
         Assert.assertTrue(automationMyStoreTest.getSuccesfullyAddToCartText().contains("Product successfully added"));
@@ -27,7 +29,9 @@ public class TestAutomationMyStoreTest extends BaseTest {
         String moreInfo = "Fashion has been creating well-designed collections since 2010.";
         automationMyStoreTest.openURL();
         Assert.assertEquals(automationMyStoreTest.getActualURL(), url);
+        //Assert.assertFalse(automationMyStoreTest.displayBotonFadeShortMore());
         automationMyStoreTest.hoverEnImagenFadeShort();
+        Assert.assertTrue(automationMyStoreTest.displayBotonFadeShortMore());
         automationMyStoreTest.clickBotonFadeShortMore();
         Assert.assertTrue(automationMyStoreTest.getMoreInfoText().contains(moreInfo));
         System.out.println("FadeShortMoreDetails");
