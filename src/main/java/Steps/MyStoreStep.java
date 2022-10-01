@@ -3,6 +3,7 @@ package Steps;
 import Pages.MyStorePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class MyStoreStep extends BaseSteps {
     public MyStoreStep(WebDriver webDriver) {
@@ -10,6 +11,7 @@ public class MyStoreStep extends BaseSteps {
     }
 
     MyStorePage myStorePage = new MyStorePage(myWebDriver);
+    Actions action = new Actions(myWebDriver);
 
     public void openURL(String url) {
         myWebDriver.get(url);
@@ -109,5 +111,50 @@ public class MyStoreStep extends BaseSteps {
         WebElement cantidad= myStorePage.getCantidadShirt();
         String cantidad1 = cantidad.getAttribute("textContent").toString();
         return cantidad1;
+    }
+    //PASO 1
+    public void openURL(){
+        myWebDriver.get("http://automationpractice.com/index.php");
+    }
+    //PASO 2
+    public void printPageTitle(){
+        System.out.println(myWebDriver.getTitle());
+    }
+
+    public String getPageTitle(){
+        return myWebDriver.getTitle();
+    }
+    //PASO 3
+    public void printActualURL(){
+        System.out.println(myWebDriver.getCurrentUrl());
+    }
+
+    public String getActualURL(){
+        return myWebDriver.getCurrentUrl();
+    }
+
+    public void hoverEnImagenFadeShort(){
+        WebElement imagenFadeShort = myStorePage.imagenFadeShort();
+        action.moveToElement(imagenFadeShort).perform();
+    }
+
+    public void clickBotonFadeShortAddToCart(){
+        WebElement addToCart = myStorePage.botonAddtoCartEnFadeShort();
+        addToCart.click();
+    }
+
+    public void clickBotonFadeShortMore(){
+        WebElement more = myStorePage.botonMoreEnFadeShort();
+        more.click();
+    }
+
+    public String getSuccesfullyAddToCartText() {
+        WebElement addCartSuccesfullyLabel = myStorePage.addCartSuccesfullyLabel();
+        return addCartSuccesfullyLabel.getText();
+    }
+
+    public String getMoreInfoText() {
+        WebElement moreInfoText = myStorePage.moreInfoText();
+        return moreInfoText.getText();
     }
 }
