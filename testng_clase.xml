@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="DemoQA Tests">
+    <test verbose="2" preserve-order="true" name="Users/gilbe_000/QAMinds/QAML_PrimerSelenium">
+        <classes>
+            <class name="DemoQATest"/>
+        </classes>
+    </test>
+</suite>

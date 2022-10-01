@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-28T20:57:46 CDT" name="DemoQA Tests" finished-at="2022-09-28T20:58:01 CDT" duration-ms="14510">
+    <groups>
+    </groups>
+    <test started-at="2022-09-28T20:57:46 CDT" name="Users/gilbe_000/QAMinds/QAML_PrimerSelenium" finished-at="2022-09-28T20:58:01 CDT" duration-ms="14510">
+      <class name="DemoQATest">
+        <test-method signature="sendkeysDemoQA()[pri:0, instance:DemoQATest@3da05287]" started-at="2022-09-28T20:57:47 CDT" name="sendkeysDemoQA" description="Send keys in DemoQA page" finished-at="2022-09-28T20:58:00 CDT" duration-ms="13170" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendkeysDemoQA -->
+        <test-method is-config="true" signature="despuesDeLaPrueba()[pri:0, instance:DemoQATest@3da05287]" started-at="2022-09-28T20:58:00 CDT" name="despuesDeLaPrueba" finished-at="2022-09-28T20:58:01 CDT" duration-ms="773" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- despuesDeLaPrueba -->
+      </class> <!-- DemoQATest -->
+    </test> <!-- Users/gilbe_000/QAMinds/QAML_PrimerSelenium -->
+  </suite> <!-- DemoQA Tests -->
+</testng-results>

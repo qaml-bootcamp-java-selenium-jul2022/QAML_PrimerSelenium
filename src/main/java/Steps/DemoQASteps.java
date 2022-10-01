@@ -51,12 +51,6 @@ public class DemoQASteps extends BaseSteps {
         WebElement permanentAddressField = demoqa.permanentAddressTextField();
         permanentAddressField.sendKeys(text);
     }
-
-    public void clickSubmitButton() {
-        WebElement LoginButton = demoqa.submitButton();
-        LoginButton.click();
-    }
-
     public boolean isNameOutPutDisplayed() {
         WebElement nameOutPutField = demoqa.nameOutPutField();
         return nameOutPutField.isDisplayed();
@@ -95,6 +89,74 @@ public class DemoQASteps extends BaseSteps {
     public String getPermanentAddressOutText() {
         WebElement permanentAddressOutPutField = demoqa.permanentAddressOutPutField();
         return permanentAddressOutPutField.getText();
+    }
+
+    public void abrirURL(String url){
+        myWebDriver.get(url);
+    }
+
+    public void enviarNombreCompleto(String texto) {
+        WebElement searchBox = demoqa.getFullNameTextBox();
+        searchBox.sendKeys(texto);
+    }
+    public void enviarCorreo(String correo) {
+        WebElement searchBox = demoqa.getEmailTextBox();
+        searchBox.sendKeys(correo);
+    }
+
+    public void enviarDireccionActual(String direccionActual) {
+        WebElement searchBox = demoqa.getCurrentAddressTextBox();
+        searchBox.sendKeys(direccionActual);
+    }
+
+    public void enviarDireccionPermanente(String direccionPermanente) {
+        WebElement searchBox = demoqa.getPermanentAddressTextBox();
+        searchBox.sendKeys(direccionPermanente);
+    }
+
+    public void clickElements(){
+        WebElement elementsMenu = demoqa.getElementsButton();
+        elementsMenu.click();
+    }
+    public boolean textBoxIsDisplayed(){
+        WebElement textBoxText = demoqa.getTextBoxOnMenu();
+        return textBoxText.isDisplayed();
+    }
+    public boolean enviarNombreCompletoisDisplayed() {
+        WebElement searchBox = demoqa.getFullNameTextBox();
+        return searchBox.isDisplayed();
+    }
+    public boolean enviarCorreoIsDisplayed() {
+        WebElement searchBox = demoqa.getEmailTextBox();
+        return searchBox.isDisplayed();
+    }
+
+    public boolean enviarDireccionActualIsDisplayed() {
+        WebElement searchBox = demoqa.getCurrentAddressTextBox();
+        return searchBox.isDisplayed();
+    }
+
+    public boolean enviarDireccionPermanenteIsDisplayed() {
+        WebElement searchBox = demoqa.getPermanentAddressTextBox();
+        return searchBox.isDisplayed();
+    }
+
+    public boolean submitButtonIsDisplayed(){
+        WebElement searchButton = demoqa.getSubmitButton();
+        return searchButton.isDisplayed();
+    }
+    public void clickTextBoxOption(){
+        WebElement textBox = demoqa.getTextBoxOnMenu();
+        textBox.click();
+    }
+    public boolean outputFormIsDisplayed(){
+        WebElement outputForm = demoqa.getOutputSubmittedForm();
+        return outputForm.isDisplayed();
+    }
+
+    public void clickSubmitButton(){
+        WebElement submitButton = demoqa.getSubmitButton();
+        submitButton.click();
     }
 
 

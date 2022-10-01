@@ -32,7 +32,7 @@ public class BaseTest {
                 System.setProperty("webdriver.chrome.driver", String.valueOf(rutaAChromeDriver));
                 //Aplica para Chrome WebDriver
                 ChromeOptions opcionesDeChrome = new ChromeOptions();
-                opcionesDeChrome.addArguments("--incognito");
+                //opcionesDeChrome.addArguments("--incognito");
                 opcionesDeChrome.merge(capacidadesDeseadas);
 
                 myWebDriver = new ChromeDriver(opcionesDeChrome);
