@@ -4,58 +4,49 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class PracticeAutomationTest extends BaseTest{
+public class PracticeAutomationTest extends BaseTest {
 
-    PracticeAutomationSteps PASteps = new PracticeAutomationSteps(myWebDriver);
+    PracticeAutomationSteps practiceAutomationSteps = new PracticeAutomationSteps(myWebDriver);
+
 
     @BeforeTest
-    public void antesDeLaPrueba(){
-        PASteps.abrirURL("https://practicetestautomation.com/practice-test-login/");
+    public void beforeTest()
+    {
+        practiceAutomationSteps.abrirURL("https://practicetestautomation.com/practice-test-login/");
+        myWebDriver.manage().window().maximize();
     }
 
-    @Test (priority = 1)
-    public void enviarLoginCasoPositivo(){
-        PASteps.enviarUsuario("student");
-        PASteps.enviarContraseña("Password123");
-        PASteps.clickSubmit();
-
-        String expectedURL = "https://practicetestautomation.com/logged-in-successfully/";
-        String actualURL = PASteps.verificarURL();
-        Assert.assertEquals(expectedURL,actualURL);
-        String expectedMessage = "Logged In Successfully";
-        String actualMessage = PASteps.verificarMensaje();
-        Assert.assertEquals(expectedMessage,actualMessage);
-        PASteps.verificarBotonLogOut();
-
-
+    @Test
+    public void positiveLogIntest(){
+        practiceAutomationSteps.ingresarUsuario("student");
+        practiceAutomationSteps.ingresarcontrasena("Password123");
+        practiceAutomationSteps.btnSubmit();
+        Assert.assertEquals(practiceAutomationSteps.imprimirURLActual(),"https://practicetestautomation.com/logged-in-successfully/");
+        Assert.assertEquals(practiceAutomationSteps.getTextLoginSuccessfull(),"Logged In Successfully");
+        practiceAutomationSteps.btnLogout();
     }
 
-    @Test (priority = 2)
-    public void verificarLoginCasoNegativoUsernameIncorrecto(){
-        PASteps.enviarUsuario("incorrectUser");
-        PASteps.enviarContraseña("Password123");
-        PASteps.clickSubmit();
-
-        String expectedErrorMessage = "Your username is invalid!";
-        String actualErrorMessage = PASteps.verificarMensajeError();
-        Assert.assertEquals(expectedErrorMessage,actualErrorMessage);
-
-    }
-    @Test (priority = 3)
-    public void verificarLoginCasoNegativoPasswordIncorrecto(){
-        PASteps.enviarUsuario("student");
-        PASteps.enviarContraseña("incorrectPassword");
-        PASteps.clickSubmit();
-
-        String expectedErrorMessage = "Your password is invalid!";
-        String actualErrorMessage = PASteps.verificarMensajeError();
-        Assert.assertEquals(expectedErrorMessage,actualErrorMessage);
-
+    @Test
+    public void negativeusernameTest(){
+        practiceAutomationSteps.ingresarUsuario("incorrectUser");
+        practiceAutomationSteps.ingresarcontrasena("Password123");
+        practiceAutomationSteps.btnSubmit();
+        practiceAutomationSteps.isDisplayedTextError();
+        Assert.assertEquals(practiceAutomationSteps.getTxtError(),"Your username is invalid!");
     }
 
+    @Test
+    public void negativePasswordTest(){
+        practiceAutomationSteps.ingresarUsuario("student");
+        practiceAutomationSteps.ingresarcontrasena("incorrectPassword");
+        practiceAutomationSteps.btnSubmit();
+        practiceAutomationSteps.isDisplayedTextError();
+        Assert.assertEquals(practiceAutomationSteps.getTxtError(),"Your password is invalid!");
+    }
 
     @AfterTest
-    public void finalDeLaPrueba(){
-        PASteps.myWebDriver.quit();
+    public void afterTest()
+    {
+        practiceAutomationSteps.quitarWebDriver();
     }
 }

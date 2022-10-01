@@ -33,5 +33,4 @@ public class PracticeAutomationPage extends BasePage{
     public WebElement getErrorMessage(){
         return myWebDriver.findElement(By.id("error"));
     }
-
 }

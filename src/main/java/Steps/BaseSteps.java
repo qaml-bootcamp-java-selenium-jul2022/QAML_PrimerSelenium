@@ -1,21 +1,22 @@
 package Steps;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class BaseSteps {
-    public WebDriver myWebDriver;
 
-    public BaseSteps (WebDriver webDriver) {
-        myWebDriver = webDriver;
+    public WebDriver myWebDriver;
+    public BaseSteps(WebDriver webDriverTest) {
+        myWebDriver = webDriverTest;
     }
 
     public void abrirURL(String url){
         myWebDriver.get(url);
     }
+    public String imprimirURLActual() {
+        return myWebDriver.getCurrentUrl();
+    }
 
-    public void quitarWebDriver(){
-
+    public void quitarWebDriver () {
         myWebDriver.quit();
     }
 }
