@@ -20,13 +20,12 @@ public class DemoQASteps extends BaseSteps{
         WebElement searchBox = demoQAPage.getFullNameTextBox();
         searchBox.sendKeys(texto);
     }
-    
+
     public void enviarCorreo(String correo) {
         WebElement searchBox = demoQAPage.getEmailTextBox();
         searchBox.sendKeys(correo);
     }
 
-    @Description("Ejemplo de description")
     public void enviarDireccionActual(String direccionActual) {
         WebElement searchBox = demoQAPage.getCurrentAddressTextBox();
         searchBox.sendKeys(direccionActual);
