@@ -8,7 +8,7 @@ public class DemoQATest extends BaseTest{
 
     DemoQASteps demoQASteps = new DemoQASteps(myWebDriver);
 
-    @BeforeTest
+    @BeforeTest(description = "Antes de las pruebas DemoQATest")
     public void antesDeLaPrueba(){
         demoQASteps.abrirURL("https://demoqa.com/");
     }
@@ -22,14 +22,15 @@ public class DemoQATest extends BaseTest{
         demoQASteps.enviarDireccionPermanente("conocida");
     }*/
 
-    @Test
+    @Test(description = "Test del requerimiento 1", groups = {"PruebasSencilla", "SmokeTest"})
     public void requerimiento1(){
         demoQASteps.clickElements();
 
         Assert.assertEquals(demoQASteps.textBoxIsDisplayed(),true);
     }
 
-    @Test
+    @Test(description = "Este test prueba si los elementos de la forma están presentes",
+            alwaysRun = true, dependsOnMethods = "requerimiento1", enabled = false, groups = "PruebasSencillas")
     public void requerimiento2(){
 
         demoQASteps.clickTextBoxOption();

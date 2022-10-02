@@ -70,6 +70,7 @@ public class BaseTest {
     void testInstanciaWebDriver () {
             WebDriver nuevaInstancia = getWebDriver(Navegadores.CHROME);
     }
+
     public String getProperty (String propertiesFile, String key) {
         Properties properties = new Properties();
         InputStream inputStream = null;

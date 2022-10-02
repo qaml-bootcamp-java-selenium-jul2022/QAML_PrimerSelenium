@@ -1,20 +1,36 @@
 package Pages;
 
-import Steps.BaseSteps;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+
 
 public class DemoQAPage extends BasePage {
     public DemoQAPage(WebDriver webDriver) {
         super(webDriver);
     }
 
+    @FindBy(how = How.ID, using = "userName")
+    private WebElement txtBoxUsername;
+
+    @FindBy(how = How.ID, using = "userEmail")
+    private WebElement txtBoxUserEmail;
+
+    @FindBy(how = How.XPATH, using = "//div[@class='card-body']//h5[contains(text(),'Elements')]")
+    private WebElement buttonList;
+
+    //@FindBy(how = How.XPATH, using = "//div[@class='card-body']//h5[contains(text(),'Elements')]")
+    //private List<WebElement> buttonList;
+
     public WebElement getFullNameTextBox(){
-        return myWebDriver.findElement(By.id("userName"));
+        return txtBoxUsername;
     }
+
     public WebElement getEmailTextBox(){
-        return myWebDriver.findElement(By.id("userEmail"));
+        return txtBoxUserEmail;
     }
 
     public WebElement getCurrentAddressTextBox(){
@@ -26,7 +42,7 @@ public class DemoQAPage extends BasePage {
     }
 
     public WebElement getElementsButton(){
-        return myWebDriver.findElement(By.xpath("//div[@class='card-body']//h5[contains(text(),'Elements')]"));
+        return buttonList;
     }
 
     public WebElement getTextBoxOnMenu(){
@@ -40,4 +56,15 @@ public class DemoQAPage extends BasePage {
         return myWebDriver.findElement(By.id("output"));
     }
 
+    public void setTxtBoxUsername(String username) {
+        getExampleTextBox().sendKeys(username);
+    }
+
+    public WebElement getExampleTextBox() {
+        try {
+            return txtBoxUsername;
+        } catch (NoSuchElementException nsee) {
+            return txtBoxUserEmail;
+        }
+    }
 }

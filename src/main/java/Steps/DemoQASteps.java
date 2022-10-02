@@ -3,12 +3,14 @@ package Steps;
 import Pages.DemoQAPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 public class DemoQASteps extends BaseSteps{
     public DemoQASteps(WebDriver webDriver) {
         super(webDriver);
     }
-    DemoQAPage demoQAPage = new DemoQAPage(myWebDriver);
+
+    DemoQAPage demoQAPage = PageFactory.initElements(myWebDriver, DemoQAPage.class);
 
     public void abrirURL(String url){
         myWebDriver.get(url);
@@ -18,11 +20,13 @@ public class DemoQASteps extends BaseSteps{
         WebElement searchBox = demoQAPage.getFullNameTextBox();
         searchBox.sendKeys(texto);
     }
+    
     public void enviarCorreo(String correo) {
         WebElement searchBox = demoQAPage.getEmailTextBox();
         searchBox.sendKeys(correo);
     }
 
+    @Description("Ejemplo de description")
     public void enviarDireccionActual(String direccionActual) {
         WebElement searchBox = demoQAPage.getCurrentAddressTextBox();
         searchBox.sendKeys(direccionActual);
@@ -64,6 +68,7 @@ public class DemoQASteps extends BaseSteps{
         WebElement searchButton = demoQAPage.getSubmitButton();
         return searchButton.isDisplayed();
     }
+
     public void clickTextBoxOption(){
         WebElement textBox = demoQAPage.getTextBoxOnMenu();
         textBox.click();
@@ -76,5 +81,14 @@ public class DemoQASteps extends BaseSteps{
     public void clickSubmitButton(){
         WebElement submitButton = demoQAPage.getSubmitButton();
         submitButton.click();
+    }
+
+    public void sendUsername() {
+        String username = "myQAMLUser";
+        demoQAPage.setTxtBoxUsername(username);
+    }
+
+    public void sendUsername(String username) {
+        demoQAPage.setTxtBoxUsername(username);
     }
 }
