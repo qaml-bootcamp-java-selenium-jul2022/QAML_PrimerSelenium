@@ -10,3 +10,11 @@
 .idea/misc.xml
 .idea/workspace.xml
 qaml_primerselenium_local.properties
+pom.xml
+qaml_primerselenium_local.properties
+test-output/Elements Tests/C__Users_judli_repositorio_github_QAML_PrimerSelenium_JDK8_QAML_PrimerSelenium.xml
+qaml_primerselenium_local.properties
+test-output/junitreports/TEST-DemoQAHomeTest.xml
+test-output/junitreports/TEST-PrimerTest.xml
+test-output/junitreports/TEST-YouTubeTests.xml
+test-output/testng-results.xml
